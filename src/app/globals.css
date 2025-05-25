@@ -69,12 +69,11 @@ body {
   background: white;
   border: 4px solid black;
   box-shadow: 8px 8px 0px black;
-  transform: rotate(-1deg);
   transition: all 0.2s ease;
 }
 
 .neo-card:hover {
-  transform: rotate(0deg) scale(1.02);
+  transform: scale(1.02);
   box-shadow: 12px 12px 0px black;
 }
 
@@ -141,18 +140,6 @@ body {
 
 .neo-shadow-sm {
   box-shadow: 4px 4px 0px black;
-}
-
-.neo-rotate-1 {
-  transform: rotate(1deg);
-}
-
-.neo-rotate-2 {
-  transform: rotate(-2deg);
-}
-
-.neo-rotate-3 {
-  transform: rotate(3deg);
 }
 
 /* Bold typography */

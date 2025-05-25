@@ -6,12 +6,12 @@ export default function Page() {
       <div className="w-full max-w-md">
         {/* Header */}
         <div className="text-center mb-8">
-          <div className="bg-primary border-4 border-black p-6 shadow-[12px_12px_0px_black] transform rotate-2 inline-block mb-6">
+          <div className="bg-primary border-4 border-black p-6 shadow-[12px_12px_0px_black]  inline-block mb-6">
             <h1 className="text-2xl md:text-4xl font-black text-black uppercase tracking-wider">
               WELCOME BACK!
             </h1>
           </div>
-          <div className="bg-white border-4 border-black p-4 shadow-[8px_8px_0px_black] transform -rotate-1">
+          <div className="bg-white border-4 border-black p-4 shadow-[8px_8px_0px_black] ">
             <p className="text-lg font-bold text-black uppercase tracking-wide">
               SIGN IN TO ACCESS YOUR ACCOUNT & API DOCS!
             </p>
@@ -19,7 +19,7 @@ export default function Page() {
         </div>
 
         {/* Clerk SignIn Component with Custom Styling */}
-        <div className="bg-white border-4 border-black shadow-[12px_12px_0px_black] p-8 transform rotate-1">
+        <div className="bg-white border-4 border-black shadow-[12px_12px_0px_black] p-8 ">
           <SignIn 
             appearance={{
               elements: {
@@ -52,7 +52,7 @@ export default function Page() {
 
         {/* Footer */}
         <div className="text-center mt-8">
-          <div className="bg-secondary border-4 border-black p-4 shadow-[8px_8px_0px_black] transform -rotate-1">
+          <div className="bg-secondary border-4 border-black p-4 shadow-[8px_8px_0px_black] ">
             <p className="text-black font-bold uppercase tracking-wide">
               🚀 JOIN THOUSANDS OF JOB SEEKERS USING OPENHIRE!
             </p>

@@ -35,8 +35,8 @@ function Hero() {
       <div className="absolute inset-0 bg-black opacity-30 mix-blend-multiply"></div>
       <div className="container mx-auto relative z-10">
         <div className="flex gap-8 py-20 lg:py-40 items-center justify-center flex-col">
-          <div className="neo-rotate-1">
-            <div className="bg-white border-4 border-black px-6 py-3 shadow-[8px_8px_0px_black] transform -rotate-2">
+          <div>
+            <div className="bg-white border-4 border-black px-6 py-3 shadow-[8px_8px_0px_black]">
               <span className="font-black uppercase tracking-wider text-black">
                 🚀 POWERED BY LINKEDIN SCRAPING
               </span>
@@ -50,7 +50,7 @@ function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="bg-white border-4 border-black p-4 shadow-[8px_8px_0px_black] transform rotate-2">
+            <div className="bg-white border-4 border-black p-4 shadow-[8px_8px_0px_black]">
               <Image
                 src="/openhire.png"
                 alt="OpenHire Logo"
@@ -59,7 +59,7 @@ function Hero() {
                 className="border-2 border-black shadow-[2px_2px_0px_black]"
               />
             </div>
-            <div className="bg-secondary border-4 border-black px-6 py-4 shadow-[8px_8px_0px_black] transform -rotate-1">
+            <div className="bg-secondary border-4 border-black px-6 py-4 shadow-[8px_8px_0px_black]">
               <h2 className="text-3xl md:text-5xl font-black text-black uppercase tracking-wider">
                 OPENHIRE
               </h2>
@@ -68,7 +68,7 @@ function Hero() {
 
           <div className="flex gap-4 flex-col">
             <h1 className="text-4xl md:text-8xl max-w-5xl tracking-tighter text-center font-black uppercase">
-              <span className="text-black neo-text-shadow bg-white px-4 py-2 border-4 border-black shadow-[8px_8px_0px_black] inline-block transform rotate-1 mb-4">
+              <span className="text-black neo-text-shadow bg-white px-4 py-2 border-4 border-black shadow-[8px_8px_0px_black] inline-block mb-4">
                 FIND YOUR
               </span>
               <span className="relative flex w-full justify-center overflow-hidden text-center md:pb-4 md:pt-8">
@@ -76,20 +76,18 @@ function Hero() {
                 {titles.map((title, index) => (
                   <motion.span
                     key={index}
-                    className="absolute font-black text-black bg-primary px-4 py-2 border-4 border-black shadow-[8px_8px_0px_black] transform -rotate-1"
-                    initial={{ opacity: 0, y: "-100", rotate: -10 }}
+                    className="absolute font-black text-black bg-primary px-4 py-2 border-4 border-black shadow-[8px_8px_0px_black]"
+                    initial={{ opacity: 0, y: "-100" }}
                     transition={{ type: "spring", stiffness: 50 }}
                     animate={
                       titleNumber === index
                         ? {
                             y: 0,
                             opacity: 1,
-                            rotate: 2,
                           }
                         : {
                             y: titleNumber > index ? -150 : 150,
                             opacity: 0,
-                            rotate: titleNumber > index ? -10 : 10,
                           }
                     }
                   >
@@ -99,7 +97,7 @@ function Hero() {
               </span>
             </h1>
 
-            <div className="bg-white border-4 border-black p-6 shadow-[12px_12px_0px_black] transform rotate-1 max-w-4xl mx-auto">
+            <div className="bg-white border-4 border-black p-6 shadow-[12px_12px_0px_black] max-w-4xl mx-auto">
               <p className="text-lg md:text-xl font-bold text-black text-center uppercase tracking-wide">
                 OPENHIRE MAKES JOB SEARCHING EFFORTLESS! SEARCH THOUSANDS OF JOB OPENINGS FROM LINKEDIN WITH OUR POWERFUL SCRAPING TECHNOLOGY. GET RESULTS INSTANTLY!
               </p>

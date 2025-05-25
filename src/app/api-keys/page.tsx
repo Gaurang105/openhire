@@ -117,12 +117,12 @@ export default function ApiKeysPage() {
       <SignedOut>
         <div className="container mx-auto px-4 py-12">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="bg-accent border-4 border-black p-8 shadow-[16px_16px_0px_black] transform rotate-2 inline-block mb-8">
+            <div className="bg-accent border-4 border-black p-8 shadow-[16px_16px_0px_black]  inline-block mb-8">
               <h1 className="text-3xl md:text-6xl font-black text-white uppercase tracking-wider">
                 🔒 ACCESS DENIED
               </h1>
             </div>
-            <div className="bg-white border-4 border-black p-6 shadow-[12px_12px_0px_black] transform -rotate-1 mb-8">
+            <div className="bg-white border-4 border-black p-6 shadow-[12px_12px_0px_black]  mb-8">
               <p className="text-xl font-bold text-black uppercase tracking-wide">
                 YOU NEED TO SIGN IN TO MANAGE YOUR API KEYS!
               </p>
@@ -139,7 +139,7 @@ export default function ApiKeysPage() {
           <div className="max-w-6xl mx-auto">
             {/* Header */}
             <div className="text-center mb-16">
-              <div className="bg-primary border-4 border-black p-8 shadow-[16px_16px_0px_black] transform rotate-2 inline-block mb-8">
+              <div className="bg-primary border-4 border-black p-8 shadow-[16px_16px_0px_black]  inline-block mb-8">
                 <div className="flex items-center justify-center space-x-4 mb-4">
                   <Image
                     src="/openhire.png"
@@ -153,7 +153,7 @@ export default function ApiKeysPage() {
                   </h1>
                 </div>
               </div>
-              <div className="bg-white border-4 border-black p-6 shadow-[12px_12px_0px_black] transform -rotate-1 max-w-4xl mx-auto">
+              <div className="bg-white border-4 border-black p-6 shadow-[12px_12px_0px_black]  max-w-4xl mx-auto">
                 <p className="text-xl font-bold text-black uppercase tracking-wide">
                   MANAGE YOUR API KEYS TO ACCESS THE JOB SEARCH API PROGRAMMATICALLY!
                 </p>

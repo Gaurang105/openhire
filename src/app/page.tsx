@@ -84,12 +84,12 @@ export default function Home() {
         <div className="container mx-auto px-4 py-8">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <div className="bg-accent border-4 border-black p-4 shadow-[12px_12px_0px_black] transform -rotate-1 inline-block mb-6">
+              <div className="bg-accent border-4 border-black p-4 shadow-[12px_12px_0px_black] inline-block mb-6">
                 <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-wider">
                   SEARCH JOBS
                 </h2>
               </div>
-              <div className="bg-white border-4 border-black p-4 shadow-[8px_8px_0px_black] transform rotate-1 max-w-2xl mx-auto">
+              <div className="bg-white border-4 border-black p-4 shadow-[8px_8px_0px_black] max-w-2xl mx-auto">
                 <p className="text-lg font-bold text-black uppercase tracking-wide">
                   FIND YOUR NEXT OPPORTUNITY FROM THOUSANDS OF LINKEDIN JOB POSTINGS!
                 </p>
@@ -165,7 +165,7 @@ export default function Home() {
             </form>
 
             {error && (
-              <div className="bg-destructive border-4 border-black p-6 shadow-[8px_8px_0px_black] transform -rotate-1 mb-8">
+              <div className="bg-destructive border-4 border-black p-6 shadow-[8px_8px_0px_black] mb-8">
                 <p className="text-white font-black uppercase tracking-wide">❌ {error}</p>
               </div>
             )}
@@ -173,7 +173,7 @@ export default function Home() {
             {/* Results Section */}
             {jobs.length > 0 && (
               <div className="mt-12">
-                <div className="bg-secondary border-4 border-black p-4 shadow-[8px_8px_0px_black] transform rotate-1 inline-block mb-8">
+                <div className="bg-secondary border-4 border-black p-4 shadow-[8px_8px_0px_black] inline-block mb-8">
                   <h3 className="text-2xl font-black text-black uppercase tracking-wider">
                     🎉 FOUND {jobs.length} JOBS!
                   </h3>
@@ -181,7 +181,7 @@ export default function Home() {
                 
                 <div className="grid gap-8">
                   {jobs.map((job, index) => (
-                    <div key={index} className={`neo-card p-8 bg-white hover:bg-primary/10 transition-all duration-200 ${index % 3 === 0 ? 'neo-rotate-1' : index % 3 === 1 ? 'neo-rotate-2' : 'neo-rotate-3'}`}>
+                    <div key={index} className="neo-card p-8 bg-white hover:bg-primary/10 transition-all duration-200">
                       <div className="flex justify-between items-start">
                         <div className="flex-1">
                           <h4 className="text-xl font-black text-black mb-4 uppercase tracking-wide">
@@ -204,7 +204,7 @@ export default function Home() {
                         </div>
                         <div className="flex flex-col items-end gap-4">
                           {job.status !== "N/A" && (
-                            <div className="bg-accent border-2 border-black px-3 py-1 shadow-[2px_2px_0px_black] transform -rotate-1">
+                            <div className="bg-accent border-2 border-black px-3 py-1 shadow-[2px_2px_0px_black]">
                               <span className="text-white font-black text-xs uppercase tracking-wide">
                                 ✨ {job.status}
                               </span>
@@ -213,8 +213,8 @@ export default function Home() {
                           {job.url !== "N/A" && (
                             <a
                               href={job.url}
-            target="_blank"
-            rel="noopener noreferrer"
+                              target="_blank"
+                              rel="noopener noreferrer"
                               className="bg-primary text-black border-2 border-black px-4 py-2 font-black uppercase tracking-wide shadow-[4px_4px_0px_black] hover:shadow-[2px_2px_0px_black] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-75 inline-flex items-center"
                             >
                               VIEW JOB <ExternalLink className="h-4 w-4 ml-2" />
@@ -236,12 +236,12 @@ export default function Home() {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <div className="bg-primary border-4 border-black p-6 shadow-[16px_16px_0px_black] transform rotate-2 inline-block mb-8">
+            <div className="bg-primary border-4 border-black p-6 shadow-[16px_16px_0px_black] inline-block mb-8">
               <h2 className="text-3xl md:text-5xl font-black text-black uppercase tracking-wider">
                 WHY OPENHIRE?
               </h2>
             </div>
-            <div className="bg-white border-4 border-black p-4 shadow-[8px_8px_0px_black] transform -rotate-1 max-w-2xl mx-auto">
+            <div className="bg-white border-4 border-black p-4 shadow-[8px_8px_0px_black] max-w-2xl mx-auto">
               <p className="text-lg font-bold text-black uppercase tracking-wide">
                 POWERFUL FEATURES TO ACCELERATE YOUR JOB SEARCH!
               </p>
@@ -249,8 +249,8 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div className="p-8 text-center bg-white border-4 border-black shadow-[8px_8px_0px_black] transform rotate-1 transition-all duration-200 hover:rotate-0 hover:scale-105 hover:shadow-[12px_12px_0px_black]">
-              <div className="w-20 h-20 bg-primary border-4 border-black shadow-[4px_4px_0px_black] flex items-center justify-center mx-auto mb-6 transform rotate-12">
+            <div className="p-8 text-center bg-white border-4 border-black shadow-[8px_8px_0px_black] transition-all duration-200 hover:scale-105 hover:shadow-[12px_12px_0px_black]">
+              <div className="w-20 h-20 bg-primary border-4 border-black shadow-[4px_4px_0px_black] flex items-center justify-center mx-auto mb-6">
                 <Search className="h-10 w-10 text-black" />
               </div>
               <h3 className="text-xl font-black text-black mb-4 uppercase tracking-wider">
@@ -261,8 +261,8 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="p-8 text-center bg-white border-4 border-black shadow-[8px_8px_0px_black] transform rotate-2 transition-all duration-200 hover:rotate-0 hover:scale-105 hover:shadow-[12px_12px_0px_black]">
-              <div className="w-20 h-20 bg-secondary border-4 border-black shadow-[4px_4px_0px_black] flex items-center justify-center mx-auto mb-6 transform -rotate-12">
+            <div className="p-8 text-center bg-white border-4 border-black shadow-[8px_8px_0px_black] transition-all duration-200 hover:scale-105 hover:shadow-[12px_12px_0px_black]">
+              <div className="w-20 h-20 bg-secondary border-4 border-black shadow-[4px_4px_0px_black] flex items-center justify-center mx-auto mb-6">
                 <MapPin className="h-10 w-10 text-black" />
               </div>
               <h3 className="text-xl font-black text-black mb-4 uppercase tracking-wider">
@@ -273,8 +273,8 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="p-8 text-center bg-white border-4 border-black shadow-[8px_8px_0px_black] transform rotate-3 transition-all duration-200 hover:rotate-0 hover:scale-105 hover:shadow-[12px_12px_0px_black]">
-              <div className="w-20 h-20 bg-accent border-4 border-black shadow-[4px_4px_0px_black] flex items-center justify-center mx-auto mb-6 transform rotate-12">
+            <div className="p-8 text-center bg-white border-4 border-black shadow-[8px_8px_0px_black] transition-all duration-200 hover:scale-105 hover:shadow-[12px_12px_0px_black]">
+              <div className="w-20 h-20 bg-accent border-4 border-black shadow-[4px_4px_0px_black] flex items-center justify-center mx-auto mb-6">
                 <Users className="h-10 w-10 text-black" />
               </div>
               <h3 className="text-xl font-black text-black mb-4 uppercase tracking-wider">
@@ -287,6 +287,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      </main>
+    </main>
   );
 }

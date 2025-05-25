@@ -96,17 +96,17 @@ searchJobs();`
       <SignedOut>
         <div className="container mx-auto px-4 py-12">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="bg-accent border-4 border-black p-8 shadow-[16px_16px_0px_black] transform rotate-2 inline-block mb-8">
+            <div className="bg-accent border-4 border-black p-8 shadow-[16px_16px_0px_black]  inline-block mb-8">
               <h1 className="text-3xl md:text-6xl font-black text-white uppercase tracking-wider">
                 🔒 ACCESS DENIED
               </h1>
             </div>
-            <div className="bg-white border-4 border-black p-6 shadow-[12px_12px_0px_black] transform -rotate-1 mb-8">
+            <div className="bg-white border-4 border-black p-6 shadow-[12px_12px_0px_black]  mb-8">
               <p className="text-xl font-bold text-black uppercase tracking-wide">
                 YOU NEED TO SIGN UP TO ACCESS THE API DOCUMENTATION!
               </p>
             </div>
-            <div className="bg-primary border-4 border-black p-6 shadow-[8px_8px_0px_black] transform rotate-1 mb-8">
+            <div className="bg-primary border-4 border-black p-6 shadow-[8px_8px_0px_black]  mb-8">
               <p className="text-black font-bold uppercase tracking-wide">
                 CREATE AN ACCOUNT TO GET FULL ACCESS TO OUR POWERFUL JOB SEARCH API!
               </p>
@@ -123,7 +123,7 @@ searchJobs();`
           <div className="max-w-6xl mx-auto">
             {/* Header */}
             <div className="text-center mb-16">
-              <div className="bg-primary border-4 border-black p-8 shadow-[16px_16px_0px_black] transform rotate-2 inline-block mb-8">
+              <div className="bg-primary border-4 border-black p-8 shadow-[16px_16px_0px_black]  inline-block mb-8">
                 <div className="flex items-center justify-center space-x-4 mb-4">
                   <Image
                     src="/openhire.png"
@@ -137,7 +137,7 @@ searchJobs();`
                   </h1>
                 </div>
               </div>
-              <div className="bg-white border-4 border-black p-6 shadow-[12px_12px_0px_black] transform -rotate-1 max-w-4xl mx-auto">
+              <div className="bg-white border-4 border-black p-6 shadow-[12px_12px_0px_black]  max-w-4xl mx-auto">
                 <p className="text-xl font-bold text-black uppercase tracking-wide">
                   POWERFUL REST API TO INTEGRATE LINKEDIN JOB SCRAPING INTO YOUR APPLICATIONS! 
                   SEARCH THOUSANDS OF JOB POSTINGS PROGRAMMATICALLY!
@@ -156,7 +156,7 @@ searchJobs();`
                       onClick={() => setActiveTab(tab.id)}
                       className={`flex items-center px-6 py-4 font-black uppercase tracking-wider border-4 border-black transition-all duration-75 whitespace-nowrap ${
                         activeTab === tab.id
-                          ? "bg-accent text-white shadow-[4px_4px_0px_black] transform rotate-1"
+                          ? "bg-accent text-white shadow-[4px_4px_0px_black] "
                           : "bg-white text-black hover:bg-primary hover:text-black shadow-[2px_2px_0px_black]"
                       }`}
                     >
@@ -173,7 +173,7 @@ searchJobs();`
               {/* Overview Tab */}
               {activeTab === "overview" && (
                 <div>
-                  <div className="bg-accent border-4 border-black p-4 shadow-[8px_8px_0px_black] transform -rotate-1 inline-block mb-8">
+                  <div className="bg-accent border-4 border-black p-4 shadow-[8px_8px_0px_black]  inline-block mb-8">
                     <h2 className="text-2xl font-black text-white uppercase tracking-wider">API OVERVIEW</h2>
                   </div>
                   
@@ -192,7 +192,7 @@ searchJobs();`
                     </div>
                   </div>
 
-                  <div className="bg-secondary border-4 border-black p-4 shadow-[8px_8px_0px_black] transform rotate-1 inline-block mb-6">
+                  <div className="bg-secondary border-4 border-black p-4 shadow-[8px_8px_0px_black]  inline-block mb-6">
                     <h3 className="text-lg font-black text-black uppercase tracking-wide">FEATURES</h3>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
@@ -226,7 +226,7 @@ searchJobs();`
                     </div>
                   </div>
 
-                  <div className="bg-accent border-4 border-black p-4 shadow-[8px_8px_0px_black] transform -rotate-1 inline-block mb-6">
+                  <div className="bg-accent border-4 border-black p-4 shadow-[8px_8px_0px_black]  inline-block mb-6">
                     <h3 className="text-lg font-black text-white uppercase tracking-wide">AVAILABLE LOCATIONS</h3>
                   </div>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
@@ -242,11 +242,11 @@ searchJobs();`
               {/* Authentication Tab */}
               {activeTab === "authentication" && (
                 <div>
-                  <div className="bg-accent border-4 border-black p-4 shadow-[8px_8px_0px_black] transform -rotate-1 inline-block mb-8">
+                  <div className="bg-accent border-4 border-black p-4 shadow-[8px_8px_0px_black]  inline-block mb-8">
                     <h2 className="text-2xl font-black text-white uppercase tracking-wider">AUTHENTICATION</h2>
                   </div>
                   
-                  <div className="bg-primary border-4 border-black p-6 shadow-[8px_8px_0px_black] mb-8 transform rotate-1">
+                  <div className="bg-primary border-4 border-black p-6 shadow-[8px_8px_0px_black] mb-8 ">
                     <p className="text-black font-black uppercase tracking-wide">
                       🔐 API KEY AUTHENTICATION IS NOW REQUIRED FOR ALL API REQUESTS!
                     </p>
@@ -296,7 +296,7 @@ searchJobs();`
                     </div>
                   </div>
 
-                  <div className="bg-destructive border-4 border-black p-6 shadow-[8px_8px_0px_black] mb-8 transform -rotate-1">
+                  <div className="bg-destructive border-4 border-black p-6 shadow-[8px_8px_0px_black] mb-8 ">
                     <p className="text-white font-black uppercase tracking-wide">
                       ⚠️ IMPORTANT: KEEP YOUR API KEY SECURE! NEVER SHARE IT PUBLICLY OR COMMIT IT TO VERSION CONTROL.
                     </p>
@@ -324,7 +324,7 @@ searchJobs();`
               {/* Endpoints Tab */}
               {activeTab === "endpoints" && (
                 <div>
-                  <div className="bg-accent border-4 border-black p-4 shadow-[8px_8px_0px_black] transform -rotate-1 inline-block mb-8">
+                  <div className="bg-accent border-4 border-black p-4 shadow-[8px_8px_0px_black]  inline-block mb-8">
                     <h2 className="text-2xl font-black text-white uppercase tracking-wider">API ENDPOINTS</h2>
                   </div>
                   
@@ -412,7 +412,7 @@ searchJobs();`
               {/* Code Examples Tab */}
               {activeTab === "examples" && (
                 <div>
-                  <div className="bg-accent border-4 border-black p-4 shadow-[8px_8px_0px_black] transform -rotate-1 inline-block mb-8">
+                  <div className="bg-accent border-4 border-black p-4 shadow-[8px_8px_0px_black]  inline-block mb-8">
                     <h2 className="text-2xl font-black text-white uppercase tracking-wider">CODE EXAMPLES</h2>
                   </div>
                   
@@ -499,8 +499,8 @@ searchJobs();`
                   </div>
 
                   {/* Try It Out Section */}
-                  <div className="mt-16 bg-primary border-4 border-black p-8 shadow-[12px_12px_0px_black] transform rotate-1">
-                    <div className="bg-white border-4 border-black p-4 shadow-[4px_4px_0px_black] transform -rotate-2 inline-block mb-6">
+                  <div className="mt-16 bg-primary border-4 border-black p-8 shadow-[12px_12px_0px_black] ">
+                    <div className="bg-white border-4 border-black p-4 shadow-[4px_4px_0px_black]  inline-block mb-6">
                       <h3 className="text-lg font-black text-black uppercase tracking-wide">TRY IT OUT</h3>
                     </div>
                     <p className="text-black font-bold uppercase tracking-wide mb-6">
