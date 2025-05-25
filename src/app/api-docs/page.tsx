@@ -21,7 +21,7 @@ export default function ApiDocs() {
   };
 
   const codeExamples = {
-    curl: `curl -X POST https://your-domain.com/api/search-jobs \\
+    curl: `curl -X POST https://openhire.vercel.app/api/search-jobs \\
   -H "Content-Type: application/json" \\
   -H "x-api-key: oh_your_api_key_here" \\
   -d '{
@@ -29,7 +29,7 @@ export default function ApiDocs() {
     "location": "Bengaluru",
     "numJobs": 25
   }'`,
-    javascript: `fetch('https://your-domain.com/api/search-jobs', {
+    javascript: `fetch('https://openhire.vercel.app/api/search-jobs', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
@@ -46,7 +46,7 @@ export default function ApiDocs() {
 .catch(error => console.error('Error:', error));`,
     python: `import requests
 
-url = "https://your-domain.com/api/search-jobs"
+url = "https://openhire.vercel.app/api/search-jobs"
 headers = {
     "Content-Type": "application/json",
     "x-api-key": "oh_your_api_key_here"
@@ -64,7 +64,7 @@ print(data)`,
 
 const searchJobs = async () => {
   try {
-    const response = await axios.post('https://your-domain.com/api/search-jobs', {
+    const response = await axios.post('https://openhire.vercel.app/api/search-jobs', {
       keywords: 'Software Developer',
       location: 'Bengaluru',
       numJobs: 25
@@ -171,7 +171,7 @@ searchJobs();`
                     <div className="bg-secondary border-4 border-black p-6 shadow-[4px_4px_0px_black]">
                       <h3 className="text-lg font-black text-black mb-4 uppercase tracking-wide">BASE URL</h3>
                       <div className="bg-white border-2 border-black p-4 font-mono text-sm font-bold text-black">
-                        https://your-domain.com/api
+                      https://openhire.vercel.app/api
                       </div>
                     </div>
                     <div className="bg-primary border-4 border-black p-6 shadow-[4px_4px_0px_black]">
