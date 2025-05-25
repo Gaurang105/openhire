@@ -301,10 +301,6 @@ To ensure fair usage and maintain service quality:
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Support
-
-For support, email support@openhire.com or create an issue in the GitHub repository.
-
 ## Deployment
 
 ### Vercel (Recommended)
