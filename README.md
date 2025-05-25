@@ -321,17 +321,3 @@ The application can be deployed on any platform that supports Next.js:
 - AWS Amplify
 
 Make sure to set the environment variables in your deployment platform.
-
-## Environment Variables
-
-| Variable | Description | Required |
-|----------|-------------|----------|
-| `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` | Clerk publishable key | Yes |
-| `CLERK_SECRET_KEY` | Clerk secret key | Yes |
-| `NEXT_PUBLIC_CLERK_SIGN_IN_URL` | Sign in URL | No |
-| `NEXT_PUBLIC_CLERK_SIGN_UP_URL` | Sign up URL | No |
-| `NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL` | Redirect after sign in | No |
-| `NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL` | Redirect after sign up | No |
-| `NEXT_PUBLIC_APP_URL` | Application URL | No |
-| `NEXT_PUBLIC_SUPABASE_URL` | Supabase project URL | Yes |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase anonymous key | Yes |
