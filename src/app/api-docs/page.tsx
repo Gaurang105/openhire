@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Copy, Play, Code, Globe, Key, Book, CheckCircle, AlertTriangle, Info } from "lucide-react";
+import { Copy, Play, Code, Globe, Key, Book, CheckCircle } from "lucide-react";
 import { SignedIn, SignedOut } from "@clerk/nextjs";
 
 export default function ApiDocs() {
