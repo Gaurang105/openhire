@@ -1,18 +1,21 @@
 # OpenHire - Job Search Platform
 
+![OpenHire Logo](public/openhire.png)
+
+**Live Site**: [https://openhire.vercel.app](https://openhire.vercel.app)
+
 A beautiful, modern job search platform that scrapes LinkedIn job postings and provides both a web interface and REST API for job searching.
 
 ## Features
 
 - 🔍 **Real-time Job Scraping**: Search thousands of job postings from LinkedIn
 - 🌍 **Location-based Search**: Filter jobs by specific cities across India
-- 🎨 **Beautiful UI**: Modern, responsive design with animated hero section
+- 🎨 **Beautiful UI**: Modern, responsive design with animated hero section and branded logo
 - 🔐 **Secure Authentication**: User authentication with Clerk and API key management
 - 🔑 **API Key Security**: Each user gets unique API keys for secure API access
 - 📱 **Responsive Design**: Works perfectly on desktop and mobile
 - 🚀 **REST API**: Programmatic access to job search functionality with authentication
 - 📚 **API Documentation**: Comprehensive documentation with code examples
-- 📊 **Usage Tracking**: Monitor API usage per key with detailed analytics
 
 ## Security Features
 
@@ -55,6 +58,7 @@ A beautiful, modern job search platform that scrapes LinkedIn job postings and p
 - **Scraping**: Axios, Cheerio
 - **API**: Next.js API Routes
 - **Webhooks**: Svix for Clerk webhook verification
+- **Deployment**: Vercel
 
 ## Getting Started
 
@@ -70,7 +74,7 @@ A beautiful, modern job search platform that scrapes LinkedIn job postings and p
 1. **Clone the repository**
    ```bash
    git clone <repository-url>
-   cd openhire-website
+   cd openhire
    ```
 
 2. **Install dependencies**
@@ -118,10 +122,15 @@ A beautiful, modern job search platform that scrapes LinkedIn job postings and p
 
 ## API Usage
 
+### Base URL
+```
+https://openhire.vercel.app/api
+```
+
 ### Authentication
 All API requests require authentication using API keys. You can get your API key by:
 
-1. Signing up/in to your account
+1. Signing up/in to your account at [https://openhire.vercel.app](https://openhire.vercel.app)
 2. Going to the API Keys page
 3. Creating a new API key
 4. Using the key in your requests
@@ -186,35 +195,53 @@ Returns API information and available locations.
 ## Project Structure
 
 ```
-openhire-website/
+openhire/
+├── public/
+│   ├── openhire.png              # Logo file
+│   └── favicon.ico               # Favicon
 ├── src/
 │   ├── app/
 │   │   ├── api/
-│   │   │   ├── search-jobs/          # Public API (requires API key)
+│   │   │   ├── search-jobs/      # Public API (requires API key)
 │   │   │   ├── internal/
-│   │   │   │   └── search-jobs/      # Internal API (requires login)
-│   │   │   ├── api-keys/             # API key management
+│   │   │   │   └── search-jobs/  # Internal API (requires login)
+│   │   │   ├── api-keys/         # API key management
 │   │   │   └── webhooks/
-│   │   │       └── clerk/            # Clerk webhooks
-│   │   ├── api-docs/                 # API documentation
-│   │   ├── api-keys/                 # API key management page
+│   │   │       └── clerk/        # Clerk webhooks
+│   │   ├── api-docs/             # API documentation
+│   │   ├── api-keys/             # API key management page
 │   │   ├── globals.css
-│   │   ├── layout.tsx
-│   │   └── page.tsx
+│   │   ├── layout.tsx            # Main layout with logo
+│   │   └── page.tsx              # Homepage with hero
 │   ├── components/
 │   │   └── ui/
-│   │       ├── animated-hero.tsx
+│   │       ├── animated-hero.tsx # Hero section with logo
 │   │       └── button.tsx
 │   ├── lib/
-│   │   ├── job-scraper.ts           # Job scraping logic
-│   │   ├── supabase.ts              # Supabase client
-│   │   ├── api-keys.ts              # API key management
+│   │   ├── job-scraper.ts        # Job scraping logic
+│   │   ├── supabase.ts           # Supabase client
+│   │   ├── api-keys.ts           # API key management
 │   │   └── utils.ts
-│   └── middleware.ts                # Route protection
+│   └── middleware.ts             # Route protection
 ├── .env.local
 ├── package.json
 └── README.md
 ```
+
+## Branding & Design
+
+### Logo Usage
+- The OpenHire logo (`openhire.png`) is consistently used across all pages
+- Logo appears in the header navigation, hero section, and page headers
+- Favicon is automatically generated from the logo
+- Logo maintains the neo-brutalist design aesthetic with borders and shadows
+
+### Design System
+- **Neo-brutalist Design**: Bold borders, shadows, and geometric shapes
+- **Color Scheme**: Primary colors with high contrast
+- **Typography**: Bold, uppercase text with wide tracking
+- **Animations**: Smooth transitions and hover effects
+- **Responsive**: Mobile-first design approach
 
 ## Security Best Practices
 
@@ -233,6 +260,7 @@ openhire-website/
 
 ### Hero Section
 - Animated text with rotating job-related terms
+- Prominent OpenHire logo with animation
 - Call-to-action buttons for API docs and job search
 - Powered by Framer Motion animations
 
@@ -286,6 +314,8 @@ For support, email support@openhire.com or create an issue in the GitHub reposit
 3. Add environment variables in Vercel dashboard
 4. Deploy
 
+The application is currently deployed at: **[https://openhire.vercel.app](https://openhire.vercel.app)**
+
 ### Other Platforms
 
 The application can be deployed on any platform that supports Next.js:
@@ -307,3 +337,5 @@ Make sure to set the environment variables in your deployment platform.
 | `NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL` | Redirect after sign in | No |
 | `NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL` | Redirect after sign up | No |
 | `NEXT_PUBLIC_APP_URL` | Application URL | No |
+| `NEXT_PUBLIC_SUPABASE_URL` | Supabase project URL | Yes |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase anonymous key | Yes |

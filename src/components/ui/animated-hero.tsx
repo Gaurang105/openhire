@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { MoveRight, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -41,6 +42,30 @@ function Hero() {
               </span>
             </div>
           </div>
+          
+          {/* Logo Section */}
+          <motion.div 
+            className="flex items-center justify-center space-x-4 mb-4"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <div className="bg-white border-4 border-black p-4 shadow-[8px_8px_0px_black] transform rotate-2">
+              <Image
+                src="/openhire.png"
+                alt="OpenHire Logo"
+                width={80}
+                height={80}
+                className="border-2 border-black shadow-[2px_2px_0px_black]"
+              />
+            </div>
+            <div className="bg-secondary border-4 border-black px-6 py-4 shadow-[8px_8px_0px_black] transform -rotate-1">
+              <h2 className="text-3xl md:text-5xl font-black text-black uppercase tracking-wider">
+                OPENHIRE
+              </h2>
+            </div>
+          </motion.div>
+
           <div className="flex gap-4 flex-col">
             <h1 className="text-4xl md:text-8xl max-w-5xl tracking-tighter text-center font-black uppercase">
               <span className="text-black neo-text-shadow bg-white px-4 py-2 border-4 border-black shadow-[8px_8px_0px_black] inline-block transform rotate-1 mb-4">

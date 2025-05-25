@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Copy, Plus, Trash2, Key, CheckCircle } from "lucide-react";
 import { SignedIn, SignedOut, useUser } from "@clerk/nextjs";
@@ -139,9 +140,18 @@ export default function ApiKeysPage() {
             {/* Header */}
             <div className="text-center mb-16">
               <div className="bg-primary border-4 border-black p-8 shadow-[16px_16px_0px_black] transform rotate-2 inline-block mb-8">
-                <h1 className="text-3xl md:text-6xl font-black text-black uppercase tracking-wider">
-                  API KEYS
-                </h1>
+                <div className="flex items-center justify-center space-x-4 mb-4">
+                  <Image
+                    src="/openhire.png"
+                    alt="OpenHire Logo"
+                    width={60}
+                    height={60}
+                    className="border-2 border-black shadow-[2px_2px_0px_black]"
+                  />
+                  <h1 className="text-3xl md:text-6xl font-black text-black uppercase tracking-wider">
+                    API KEYS
+                  </h1>
+                </div>
               </div>
               <div className="bg-white border-4 border-black p-6 shadow-[12px_12px_0px_black] transform -rotate-1 max-w-4xl mx-auto">
                 <p className="text-xl font-bold text-black uppercase tracking-wide">
