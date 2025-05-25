@@ -24,7 +24,7 @@ export async function POST(request: NextRequest) {
 
   const wh = new Webhook(webhookSecret);
 
-  let evt: any;
+  let evt: unknown;
 
   try {
     evt = wh.verify(payload, {
@@ -37,12 +37,13 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Invalid webhook signature' }, { status: 400 });
   }
 
-  const eventType = evt.type;
+  const eventData = evt as { type: string; data: { id: string; email_addresses: Array<{ id: string; email_address: string }>; primary_email_address_id: string } };
+  const eventType = eventData.type;
   
   if (eventType === 'user.created') {
     try {
-      const { id: clerkUserId, email_addresses } = evt.data;
-      const primaryEmail = email_addresses.find((email: any) => email.id === evt.data.primary_email_address_id);
+      const { id: clerkUserId, email_addresses } = eventData.data;
+      const primaryEmail = email_addresses.find((email: { id: string; email_address: string }) => email.id === eventData.data.primary_email_address_id);
       
       if (!primaryEmail) {
         console.error('No primary email found for user:', clerkUserId);

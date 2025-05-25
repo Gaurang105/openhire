@@ -85,13 +85,13 @@ export async function POST(request: NextRequest) {
       }
     });
 
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Error in job search API:', error);
     
     return NextResponse.json(
       { 
         error: 'Failed to search for jobs',
-        details: process.env.NODE_ENV === 'development' ? error.message : undefined
+        details: process.env.NODE_ENV === 'development' ? (error as Error).message : undefined
       },
       { status: 500 }
     );

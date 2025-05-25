@@ -66,8 +66,8 @@ export default function Home() {
       }
 
       setJobs(data.jobs || []);
-    } catch (err: any) {
-      setError(err.message || 'An error occurred while searching for jobs');
+    } catch (err: unknown) {
+      setError((err as Error).message || 'An error occurred while searching for jobs');
     } finally {
       setLoading(false);
     }

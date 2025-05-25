@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosInstance } from 'axios';
 import * as cheerio from 'cheerio';
 
 export interface JobData {
@@ -17,7 +17,7 @@ export interface LocationData {
 
 export class LinkedInJobScraper {
   private baseUrl: string;
-  private client: any;
+  private client: AxiosInstance;
   public locations: Record<string, LocationData>;
 
   constructor() {
@@ -80,7 +80,7 @@ export class LinkedInJobScraper {
     return url;
   }
 
-  extractJobData(jobElement: any, $: any): JobData | null {
+  extractJobData(jobElement: cheerio.Element, $: cheerio.Root): JobData | null {
     try {
       const jobData: Partial<JobData> = {};
       
@@ -133,11 +133,11 @@ export class LinkedInJobScraper {
       console.log(`Found ${jobs.length} jobs on this page`);
       return jobs;
       
-    } catch (error: any) {
-      if (error.response) {
+    } catch (error: unknown) {
+      if (axios.isAxiosError(error) && error.response) {
         console.log(`Error fetching page: ${error.response.status} ${error.response.statusText}`);
       } else {
-        console.log(`Error fetching page: ${error.message}`);
+        console.log(`Error fetching page: ${(error as Error).message}`);
       }
       return [];
     }

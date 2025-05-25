@@ -40,7 +40,7 @@ export async function GET() {
       apiKeys: safeApiKeys
     });
 
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Error getting API keys:', error);
     return NextResponse.json(
       { error: 'Failed to get API keys' },
@@ -108,7 +108,7 @@ export async function POST(request: NextRequest) {
       message: 'API key created successfully. Please save it securely as you won\'t be able to see it again.'
     });
 
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Error creating API key:', error);
     return NextResponse.json(
       { error: 'Failed to create API key' },
@@ -162,7 +162,7 @@ export async function DELETE(request: NextRequest) {
       message: 'API key deactivated successfully'
     });
 
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Error deactivating API key:', error);
     return NextResponse.json(
       { error: 'Failed to deactivate API key' },

@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Copy, Play, Code, Globe, Key, Book, CheckCircle } from "lucide-react";
-import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
+import { SignedIn, SignedOut } from "@clerk/nextjs";
 
 export default function ApiDocs() {
   const [activeTab, setActiveTab] = useState("overview");
@@ -109,9 +110,9 @@ searchJobs();`
                 CREATE AN ACCOUNT TO GET FULL ACCESS TO OUR POWERFUL JOB SEARCH API!
               </p>
             </div>
-            <a href="/sign-in" className="bg-secondary text-black border-4 border-black px-8 py-4 font-black uppercase tracking-wider shadow-[4px_4px_0px_black] hover:shadow-[2px_2px_0px_black] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-75 text-lg">
+            <Link href="/sign-in" className="bg-secondary text-black border-4 border-black px-8 py-4 font-black uppercase tracking-wider shadow-[4px_4px_0px_black] hover:shadow-[2px_2px_0px_black] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-75 text-lg">
               🚀 SIGN UP NOW!
-            </a>
+            </Link>
           </div>
         </div>
       </SignedOut>
@@ -253,7 +254,7 @@ searchJobs();`
                       </li>
                       <li className="flex items-start">
                         <span className="bg-accent text-white px-3 py-1 border-2 border-black mr-4 font-black">2</span>
-                        <span>GO TO THE <a href="/api-keys" className="text-primary underline">API KEYS</a> PAGE</span>
+                        <span>GO TO THE <Link href="/api-keys" className="text-primary underline">API KEYS</Link> PAGE</span>
                       </li>
                       <li className="flex items-start">
                         <span className="bg-accent text-white px-3 py-1 border-2 border-black mr-4 font-black">3</span>

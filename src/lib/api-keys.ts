@@ -94,7 +94,7 @@ export async function validateApiKey(apiKey: string): Promise<{ isValid: boolean
 
     return {
       isValid: true,
-      user: (apiKeyData as any).users,
+      user: (apiKeyData as ApiKey & { users: User }).users,
       apiKeyData: apiKeyData
     };
   } catch (error) {

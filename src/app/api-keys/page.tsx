@@ -1,8 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Copy, Plus, Trash2, Key, Eye, EyeOff, CheckCircle } from "lucide-react";
+import { Copy, Plus, Trash2, Key, CheckCircle } from "lucide-react";
 import { SignedIn, SignedOut, useUser } from "@clerk/nextjs";
 
 interface ApiKey {
@@ -22,7 +23,6 @@ export default function ApiKeysPage() {
   const [newKeyName, setNewKeyName] = useState("");
   const [showCreateForm, setShowCreateForm] = useState(false);
   const [newApiKey, setNewApiKey] = useState<string | null>(null);
-  const [copySuccess, setCopySuccess] = useState("");
   const { user } = useUser();
 
   const fetchApiKeys = async () => {
@@ -96,8 +96,6 @@ export default function ApiKeysPage() {
   const copyToClipboard = async (text: string) => {
     try {
       await navigator.clipboard.writeText(text);
-      setCopySuccess("Copied!");
-      setTimeout(() => setCopySuccess(""), 2000);
     } catch (err) {
       console.error('Failed to copy:', err);
     }
@@ -128,9 +126,9 @@ export default function ApiKeysPage() {
                 YOU NEED TO SIGN IN TO MANAGE YOUR API KEYS!
               </p>
             </div>
-            <a href="/sign-in" className="bg-secondary text-black border-4 border-black px-8 py-4 font-black uppercase tracking-wider shadow-[4px_4px_0px_black] hover:shadow-[2px_2px_0px_black] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-75 text-lg">
+            <Link href="/sign-in" className="bg-secondary text-black border-4 border-black px-8 py-4 font-black uppercase tracking-wider shadow-[4px_4px_0px_black] hover:shadow-[2px_2px_0px_black] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-75 text-lg">
               🚀 SIGN IN NOW!
-            </a>
+            </Link>
           </div>
         </div>
       </SignedOut>
@@ -163,7 +161,7 @@ export default function ApiKeysPage() {
                 </div>
                 <div className="bg-white border-4 border-black p-4 mb-4">
                   <p className="text-black font-bold uppercase tracking-wide mb-4">
-                    ⚠️ SAVE THIS KEY SECURELY - YOU WON'T BE ABLE TO SEE IT AGAIN!
+                    ⚠️ SAVE THIS KEY SECURELY - YOU WON&apos;T BE ABLE TO SEE IT AGAIN!
                   </p>
                   <div className="flex items-center bg-muted border-2 border-black p-4">
                     <code className="flex-1 font-mono text-sm font-bold text-black break-all">

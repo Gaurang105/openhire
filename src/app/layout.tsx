@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Geist, Geist_Mono } from "next/font/google";
 import {
   ClerkProvider,
-  SignInButton,
-  SignUpButton,
   SignedIn,
   SignedOut,
   UserButton,
@@ -43,19 +42,19 @@ export default function RootLayout({
                 OPENHIRE
               </div>
               <nav className="hidden md:flex items-center space-x-8">
-                <a href="/" className="text-black font-bold uppercase tracking-wide hover:text-primary transition-colors">HOME</a>
-                <a href="/#search-section" className="text-black font-bold uppercase tracking-wide hover:text-primary transition-colors">JOBS</a>
-                <a href="/api-docs" className="text-black font-bold uppercase tracking-wide hover:text-primary transition-colors">API</a>
+                <Link href="/" className="text-black font-bold uppercase tracking-wide hover:text-primary transition-colors">HOME</Link>
+                <Link href="/#search-section" className="text-black font-bold uppercase tracking-wide hover:text-primary transition-colors">JOBS</Link>
+                <Link href="/api-docs" className="text-black font-bold uppercase tracking-wide hover:text-primary transition-colors">API</Link>
                 <SignedIn>
-                  <a href="/api-keys" className="text-black font-bold uppercase tracking-wide hover:text-primary transition-colors">API KEYS</a>
+                  <Link href="/api-keys" className="text-black font-bold uppercase tracking-wide hover:text-primary transition-colors">API KEYS</Link>
                 </SignedIn>
               </nav>
               <div className="flex items-center space-x-4">
                 <SignedOut>
-                  <a href="/sign-in" className="text-black font-bold uppercase tracking-wide hover:text-primary transition-colors">SIGN IN</a>
-                  <a href="/sign-in" className="bg-accent text-white border-4 border-black px-4 py-2 font-black uppercase tracking-wider shadow-[4px_4px_0px_black] hover:shadow-[2px_2px_0px_black] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-75">
+                  <Link href="/sign-in" className="text-black font-bold uppercase tracking-wide hover:text-primary transition-colors">SIGN IN</Link>
+                  <Link href="/sign-in" className="bg-accent text-white border-4 border-black px-4 py-2 font-black uppercase tracking-wider shadow-[4px_4px_0px_black] hover:shadow-[2px_2px_0px_black] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-75">
                     SIGN UP
-                  </a>
+                  </Link>
                 </SignedOut>
                 <SignedIn>
                   <div className="border-4 border-black bg-white p-1 shadow-[4px_4px_0px_black]">
