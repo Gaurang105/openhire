@@ -1,26 +1,172 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: 0 0% 100%;
+  --foreground: 0 0% 0%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 0%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 0%;
+  --primary: 120 100% 50%;
+  --primary-foreground: 0 0% 0%;
+  --secondary: 60 100% 50%;
+  --secondary-foreground: 0 0% 0%;
+  --muted: 0 0% 96%;
+  --muted-foreground: 0 0% 20%;
+  --accent: 300 100% 50%;
+  --accent-foreground: 0 0% 0%;
+  --destructive: 0 100% 50%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 0 0% 0%;
+  --input: 0 0% 100%;
+  --ring: 120 100% 50%;
+  --radius: 0rem;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+body {
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-weight: 700;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+/* Neo-brutalist utility classes */
+.neo-card {
+  background: white;
+  border: 4px solid black;
+  box-shadow: 8px 8px 0px black;
+  transform: rotate(-1deg);
+  transition: all 0.2s ease;
+}
+
+.neo-card:hover {
+  transform: rotate(0deg) scale(1.02);
+  box-shadow: 12px 12px 0px black;
+}
+
+.neo-button {
+  background: hsl(var(--primary));
+  border: 4px solid black;
+  box-shadow: 4px 4px 0px black;
+  color: black;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.1s ease;
+}
+
+.neo-button:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px black;
+}
+
+.neo-button:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px black;
+}
+
+.neo-input {
+  background: white;
+  border: 4px solid black;
+  box-shadow: inset 4px 4px 0px #f0f0f0;
+  font-weight: 700;
+}
+
+.neo-input:focus {
+  outline: none;
+  box-shadow: inset 4px 4px 0px hsl(var(--primary));
+}
+
+.neo-hero {
+  background: linear-gradient(45deg, #ff00ff 0%, #00ffff 25%, #ffff00 50%, #ff00ff 75%, #00ffff 100%);
+  background-size: 400% 400%;
+  animation: gradient 8s ease infinite;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.neo-text-shadow {
+  text-shadow: 4px 4px 0px black;
+}
+
+.neo-text-shadow-white {
+  text-shadow: 4px 4px 0px white;
+}
+
+.neo-border {
+  border: 4px solid black;
+}
+
+.neo-shadow {
+  box-shadow: 8px 8px 0px black;
+}
+
+.neo-shadow-sm {
+  box-shadow: 4px 4px 0px black;
+}
+
+.neo-rotate-1 {
+  transform: rotate(1deg);
+}
+
+.neo-rotate-2 {
+  transform: rotate(-2deg);
+}
+
+.neo-rotate-3 {
+  transform: rotate(3deg);
+}
+
+/* Bold typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.neo-zigzag {
+  background-image: 
+    linear-gradient(45deg, transparent 33%, black 33%, black 66%, transparent 66%),
+    linear-gradient(-45deg, transparent 33%, black 33%, black 66%, transparent 66%);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 0;
+  height: 20px;
 }
