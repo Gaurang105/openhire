@@ -1,6 +1,6 @@
 # OpenHire - Job Search Platform
 
-![OpenHire Logo](public/openhire.png)
+![OpenHire Preview](public/openhire-preview.png)
 
 **Live Site**: [https://openhire.vercel.app](https://openhire.vercel.app)
 
