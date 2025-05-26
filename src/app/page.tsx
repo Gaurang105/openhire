@@ -143,7 +143,7 @@ export default function Home() {
                   <label htmlFor="numJobs" className="block text-xs md:text-sm font-black text-black mb-2 md:mb-3 uppercase tracking-wide">
                     NUMBER OF JOBS
                   </label>
-                  <Tooltip content="You can fetch up to 250 jobs at max for a location">
+                  <Tooltip content="Fetch up to 250 jobs at max for a location">
                     <div className="relative">
                       <Users className="absolute left-3 md:left-4 top-3 md:top-4 h-4 md:h-5 w-4 md:w-5 text-black" />
                       <input
