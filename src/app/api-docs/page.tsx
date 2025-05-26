@@ -221,7 +221,7 @@ searchJobs();`
                       <CheckCircle className="h-6 w-6 text-primary mr-4 mt-1 flex-shrink-0" />
                       <div>
                         <h4 className="font-black text-black uppercase tracking-wide">FLEXIBLE RESULTS</h4>
-                        <p className="text-black font-bold text-sm uppercase">CONTROL THE NUMBER OF RESULTS (1-100)</p>
+                        <p className="text-black font-bold text-sm uppercase">CONTROL THE NUMBER OF RESULTS (1-250)</p>
                       </div>
                     </div>
                   </div>
@@ -311,7 +311,7 @@ searchJobs();`
                       TO ENSURE FAIR USAGE AND MAINTAIN SERVICE QUALITY:
                     </p>
                     <ul className="space-y-2 text-black font-bold uppercase tracking-wide">
-                      <li>• MAXIMUM 100 JOBS PER REQUEST</li>
+                      <li>• MAXIMUM 250 JOBS PER REQUEST</li>
                       <li>• 2-SECOND DELAY BETWEEN PAGINATION REQUESTS</li>
                       <li>• RECOMMENDED: 1 REQUEST PER 5 SECONDS</li>
                       <li>• API USAGE IS TRACKED PER API KEY</li>
@@ -345,7 +345,7 @@ searchJobs();`
                       <pre className="text-sm font-bold text-black">{`{
     "keywords": "string (required)",
     "location": "string (required)",
-    "numJobs": "number (optional, 1-100, default: 25)"
+    "numJobs": "number (optional, 1-250, default: 25)"
   }`}</pre>
                     </div>
 
@@ -396,7 +396,7 @@ searchJobs();`
     "parameters": {
       "keywords": "string (required) - Job search keywords",
       "location": "string (required) - Location from available list",
-      "numJobs": "number (optional) - Number of jobs to return (1-100, default: 25)"
+      "numJobs": "number (optional) - Number of jobs to return (1-250, default: 25)"
     },
     "example": {
       "keywords": "Software Developer",

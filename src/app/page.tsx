@@ -4,6 +4,7 @@ import { Hero } from "@/components/ui/animated-hero";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Search, MapPin, Users, ExternalLink, Calendar, Building } from "lucide-react";
+import { Tooltip } from "@/components/ui/tooltip";
 
 interface JobData {
   title: string;
@@ -18,7 +19,7 @@ export default function Home() {
   const [searchParams, setSearchParams] = useState({
     keywords: "",
     location: "",
-    numJobs: 25
+    numJobs: "25"
   });
   const [jobs, setJobs] = useState<JobData[]>([]);
   const [loading, setLoading] = useState(false);
@@ -49,7 +50,10 @@ export default function Home() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(searchParams),
+        body: JSON.stringify({
+          ...searchParams,
+          numJobs: parseInt(searchParams.numJobs) || 25
+        }),
       });
 
       const data = await response.json();
@@ -139,19 +143,21 @@ export default function Home() {
                   <label htmlFor="numJobs" className="block text-xs md:text-sm font-black text-black mb-2 md:mb-3 uppercase tracking-wide">
                     NUMBER OF JOBS
                   </label>
-                  <div className="relative">
-                    <Users className="absolute left-3 md:left-4 top-3 md:top-4 h-4 md:h-5 w-4 md:w-5 text-black" />
-                    <input
-                      id="numJobs"
-                      type="number"
-                      min="1"
-                      max="100"
-                      placeholder="25"
-                      className="neo-input w-full pl-10 md:pl-12 pr-3 md:pr-4 py-3 md:py-4 text-sm md:text-base text-black placeholder:text-gray-600"
-                      value={searchParams.numJobs}
-                      onChange={(e) => setSearchParams({...searchParams, numJobs: parseInt(e.target.value) || 25})}
-                    />
-                  </div>
+                  <Tooltip content="You can fetch up to 250 jobs at max for a location">
+                    <div className="relative">
+                      <Users className="absolute left-3 md:left-4 top-3 md:top-4 h-4 md:h-5 w-4 md:w-5 text-black" />
+                      <input
+                        id="numJobs"
+                        type="number"
+                        min="1"
+                        max="250"
+                        placeholder="25"
+                        className="neo-input w-full pl-10 md:pl-12 pr-3 md:pr-4 py-3 md:py-4 text-sm md:text-base text-black placeholder:text-gray-600"
+                        value={searchParams.numJobs}
+                        onChange={(e) => setSearchParams({...searchParams, numJobs: e.target.value})}
+                      />
+                    </div>
+                  </Tooltip>
                 </div>
               </div>
 

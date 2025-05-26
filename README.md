@@ -284,7 +284,7 @@ openhire/
 ## Rate Limiting
 
 To ensure fair usage and maintain service quality:
-- Maximum 100 jobs per request
+- Maximum 250 jobs per request
 - 2-second delay between pagination requests
 - Recommended: 1 request per 5 seconds
 - API usage is tracked per API key

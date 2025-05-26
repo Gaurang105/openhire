@@ -46,9 +46,9 @@ export async function POST(request: NextRequest) {
     }
 
     const jobCount = parseInt(numJobs) || 25;
-    if (jobCount < 1 || jobCount > 100) {
+    if (jobCount < 1 || jobCount > 250) {
       return NextResponse.json(
-        { error: 'Number of jobs must be between 1 and 100' },
+        { error: 'Number of jobs must be between 1 and 250' },
         { status: 400 }
       );
     }
@@ -114,7 +114,7 @@ export async function GET() {
     parameters: {
       keywords: 'string (required) - Job search keywords',
       location: 'string (required) - Location from available list',
-      numJobs: 'number (optional) - Number of jobs to return (1-100, default: 25)'
+      numJobs: 'number (optional) - Number of jobs to return (1-250, default: 25)'
     },
     example: {
       keywords: 'Software Developer',
