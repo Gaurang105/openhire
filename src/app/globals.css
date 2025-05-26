@@ -77,6 +77,18 @@ body {
   box-shadow: 12px 12px 0px black;
 }
 
+/* Mobile-specific adjustments for neo-card */
+@media (max-width: 768px) {
+  .neo-card {
+    box-shadow: 4px 4px 0px black;
+  }
+  
+  .neo-card:hover {
+    transform: scale(1.01);
+    box-shadow: 6px 6px 0px black;
+  }
+}
+
 .neo-button {
   background: hsl(var(--primary));
   border: 4px solid black;
@@ -110,6 +122,18 @@ body {
   box-shadow: inset 4px 4px 0px hsl(var(--primary));
 }
 
+/* Mobile-specific input adjustments */
+@media (max-width: 768px) {
+  .neo-input {
+    border: 3px solid black;
+    box-shadow: inset 3px 3px 0px #f0f0f0;
+  }
+  
+  .neo-input:focus {
+    box-shadow: inset 3px 3px 0px hsl(var(--primary));
+  }
+}
+
 .neo-hero {
   background: linear-gradient(45deg, #ff00ff 0%, #00ffff 25%, #ffff00 50%, #ff00ff 75%, #00ffff 100%);
   background-size: 400% 400%;
@@ -128,6 +152,17 @@ body {
 
 .neo-text-shadow-white {
   text-shadow: 4px 4px 0px white;
+}
+
+/* Mobile-specific text shadow adjustments */
+@media (max-width: 768px) {
+  .neo-text-shadow {
+    text-shadow: 2px 2px 0px black;
+  }
+  
+  .neo-text-shadow-white {
+    text-shadow: 2px 2px 0px white;
+  }
 }
 
 .neo-border {
@@ -149,6 +184,13 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 2px;
 }
 
+/* Mobile typography adjustments */
+@media (max-width: 768px) {
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: 1px;
+  }
+}
+
 .neo-zigzag {
   background-image: 
     linear-gradient(45deg, transparent 33%, black 33%, black 66%, transparent 66%),
@@ -156,4 +198,40 @@ h1, h2, h3, h4, h5, h6 {
   background-size: 20px 20px;
   background-position: 0 0, 10px 0;
   height: 20px;
+}
+
+/* Mobile-specific zigzag adjustments */
+@media (max-width: 768px) {
+  .neo-zigzag {
+    background-size: 15px 15px;
+    background-position: 0 0, 7.5px 0;
+    height: 15px;
+  }
+}
+
+/* Mobile-specific utility classes */
+@media (max-width: 768px) {
+  /* Reduce excessive padding on mobile */
+  .mobile-reduce-padding {
+    padding: 1rem !important;
+  }
+  
+  /* Ensure text doesn't overflow on mobile */
+  .mobile-text-wrap {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+  
+  /* Prevent horizontal scroll */
+  .mobile-no-overflow {
+    overflow-x: hidden;
+  }
+}
+
+/* Ensure the body doesn't have horizontal scroll on mobile */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
 }

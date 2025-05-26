@@ -8,6 +8,7 @@ import {
   SignedOut,
   UserButton,
 } from "@clerk/nextjs";
+import { MobileNav } from "./mobile-nav";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -104,21 +105,23 @@ export default function RootLayout({
         >
           <header className="bg-secondary border-b-4 border-black relative">
             <div className="neo-zigzag"></div>
-            <div className="container mx-auto px-4 py-6 flex justify-between items-center">
-              <Link href="/" className="flex items-center space-x-3 group">
+            <div className="container mx-auto px-4 py-4 md:py-6 flex justify-between items-center">
+              <Link href="/" className="flex items-center space-x-2 md:space-x-3 group">
                 <div className="relative">
                   <Image
                     src="/openhire.png"
                     alt="OpenHire Logo"
-                    width={40}
-                    height={40}
-                    className="border-2 border-black shadow-[2px_2px_0px_black] group-hover:shadow-[4px_4px_0px_black] transition-all duration-75"
+                    width={32}
+                    height={32}
+                    className="md:w-10 md:h-10 border-2 border-black shadow-[2px_2px_0px_black] group-hover:shadow-[4px_4px_0px_black] transition-all duration-75"
                   />
                 </div>
-                <div className="font-black text-2xl text-black neo-text-shadow-white uppercase tracking-wider group-hover:text-primary transition-colors">
+                <div className="font-black text-lg md:text-2xl text-black neo-text-shadow-white uppercase tracking-wider group-hover:text-primary transition-colors">
                   OPENHIRE
                 </div>
               </Link>
+              
+              {/* Desktop Navigation */}
               <nav className="hidden md:flex items-center space-x-8">
                 <Link href="/" className="text-black font-bold uppercase tracking-wide hover:text-primary transition-colors">HOME</Link>
                 <Link href="/#search-section" className="text-black font-bold uppercase tracking-wide hover:text-primary transition-colors">JOBS</Link>
@@ -127,7 +130,9 @@ export default function RootLayout({
                   <Link href="/api-keys" className="text-black font-bold uppercase tracking-wide hover:text-primary transition-colors">API KEYS</Link>
                 </SignedIn>
               </nav>
-              <div className="flex items-center space-x-4">
+              
+              {/* Desktop Auth Buttons */}
+              <div className="hidden md:flex items-center space-x-4">
                 <SignedOut>
                   <Link href="/sign-in" className="text-black font-bold uppercase tracking-wide hover:text-primary transition-colors">SIGN IN</Link>
                   <Link href="/sign-in" className="bg-accent text-white border-4 border-black px-4 py-2 font-black uppercase tracking-wider shadow-[4px_4px_0px_black] hover:shadow-[2px_2px_0px_black] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-75">
@@ -140,6 +145,9 @@ export default function RootLayout({
                   </div>
                 </SignedIn>
               </div>
+
+              {/* Mobile Navigation */}
+              <MobileNav />
             </div>
             <div className="neo-zigzag"></div>
           </header>
