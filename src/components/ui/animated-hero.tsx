@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { MoveRight, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ProductHuntBadge } from "@/components/ui/product-hunt-badge";
 
 function Hero() {
   const [titleNumber, setTitleNumber] = useState(0);
@@ -103,6 +104,17 @@ function Hero() {
               </p>
             </div>
           </div>
+          
+          {/* Product Hunt Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+            className="flex justify-center"
+          >
+            <ProductHuntBadge />
+          </motion.div>
+          
           <div className="flex flex-col md:flex-row gap-4 md:gap-6 mt-6 md:mt-8 w-full justify-center items-center">
             <Button size="lg" className="gap-3 md:gap-4 w-full md:w-48 lg:w-60" variant="outline" onClick={handleAPIClick}>
               <span className="font-black text-sm md:text-base">EXPLORE API</span> <MoveRight className="w-5 h-5 md:w-6 md:h-6" />
