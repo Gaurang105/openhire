@@ -38,7 +38,7 @@ function Hero() {
           <div>
             <div className="bg-white border-4 border-black px-4 md:px-6 py-2 md:py-3 shadow-[6px_6px_0px_black] md:shadow-[8px_8px_0px_black]">
               <span className="font-black uppercase tracking-wider text-black text-sm md:text-base">
-                🚀 POWERED BY LINKEDIN SCRAPING
+                ⚡️ SEARCH THOUSANDS OF LINKEDIN JOBS
               </span>
             </div>
           </div>
