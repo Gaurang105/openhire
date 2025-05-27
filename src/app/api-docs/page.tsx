@@ -110,7 +110,7 @@ searchJobs();`
                 CREATE AN ACCOUNT TO GET FULL ACCESS TO OUR POWERFUL JOB SEARCH API!
               </p>
             </div>
-            <Link href="/sign-in" className="bg-secondary text-black border-4 border-black px-8 py-4 font-black uppercase tracking-wider shadow-[4px_4px_0px_black] hover:shadow-[2px_2px_0px_black] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-75 text-lg">
+            <Link href="/sign-up" className="bg-secondary text-black border-4 border-black px-8 py-4 font-black uppercase tracking-wider shadow-[4px_4px_0px_black] hover:shadow-[2px_2px_0px_black] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-75 text-lg">
               🚀 SIGN UP NOW!
             </Link>
           </div>

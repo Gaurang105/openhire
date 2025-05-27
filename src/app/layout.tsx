@@ -136,7 +136,7 @@ export default function RootLayout({
               <div className="hidden md:flex items-center space-x-4">
                 <SignedOut>
                   <Link href="/sign-in" className="text-black font-bold uppercase tracking-wide hover:text-primary transition-colors">SIGN IN</Link>
-                  <Link href="/sign-in" className="bg-accent text-white border-4 border-black px-4 py-2 font-black uppercase tracking-wider shadow-[4px_4px_0px_black] hover:shadow-[2px_2px_0px_black] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-75">
+                  <Link href="/sign-up" className="bg-accent text-white border-4 border-black px-4 py-2 font-black uppercase tracking-wider shadow-[4px_4px_0px_black] hover:shadow-[2px_2px_0px_black] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-75">
                     SIGN UP
                   </Link>
                 </SignedOut>
