@@ -2,7 +2,7 @@
 
 ![OpenHire Preview](public/openhire-preview.png)
 
-**Live Site**: [https://openhire.vercel.app](https://openhire.vercel.app)
+**Live Site**: [https://openhire.work](https://openhire.work)
 
 A beautiful, modern job search platform that scrapes LinkedIn job postings and provides both a web interface and REST API for job searching.
 
@@ -105,7 +105,7 @@ A beautiful, modern job search platform that scrapes LinkedIn job postings and p
    ```
 
 5. **Open your browser**
-   Navigate to [http://localhost:3000](http://localhost:3000)
+   Navigate to [http://localhost:3000](http://localhost:3000) for development or [https://openhire.work](https://openhire.work) for production
 
 ## Setting up Authentication & Database
 
@@ -124,13 +124,13 @@ A beautiful, modern job search platform that scrapes LinkedIn job postings and p
 
 ### Base URL
 ```
-https://openhire.vercel.app/api
+https://openhire.work/api
 ```
 
 ### Authentication
 All API requests require authentication using API keys. You can get your API key by:
 
-1. Signing up/in to your account at [https://openhire.vercel.app](https://openhire.vercel.app)
+1. Signing up/in to your account at [https://openhire.work](https://openhire.work)
 2. Going to the API Keys page
 3. Creating a new API key
 4. Using the key in your requests
@@ -310,7 +310,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 3. Add environment variables in Vercel dashboard
 4. Deploy
 
-The application is currently deployed at: **[https://openhire.vercel.app](https://openhire.vercel.app)**
+The application is currently deployed at: **[https://openhire.work](https://openhire.work)**
 
 ### Other Platforms
 
