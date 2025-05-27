@@ -6,7 +6,6 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Copy, Play, Code, Globe, Key, Book, CheckCircle } from "lucide-react";
 import { SignedIn, SignedOut } from "@clerk/nextjs";
-import { Metadata } from "next";
 
 export default function ApiDocs() {
   const [activeTab, setActiveTab] = useState("overview");
