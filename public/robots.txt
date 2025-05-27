@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Important pages
+Allow: /api-docs
+Allow: /sign-up
+Allow: /sign-in
+
+# Block API endpoints from indexing
+Disallow: /api/
+
+# Block private pages
+Disallow: /api-keys
+
+# Sitemap location
+Sitemap: https://openhire.work/sitemap.xml
+
+# Crawl delay (optional - helps with server load)
+Crawl-delay: 1 

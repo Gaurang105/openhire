@@ -23,16 +23,43 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "OpenHire - Find Your Dream Job",
-  description: "Search thousands of job openings from LinkedIn with powerful scraping technology. Get instant results through our beautiful interface or REST API.",
-  keywords: ["jobs", "linkedin", "job search", "api", "scraping", "careers", "employment", "hiring"],
-  authors: [{ name: "OpenHire Team" }],
+  metadataBase: new URL('https://openhire.work'),
+  title: {
+    default: "OpenHire - Find Your Dream Job | LinkedIn Job Search API",
+    template: "%s | OpenHire"
+  },
+  description: "Search thousands of job openings from LinkedIn with powerful scraping technology. Get instant results through our beautiful interface or REST API. Find software developer, marketing, sales, and other jobs in India.",
+  keywords: [
+    "jobs", 
+    "linkedin", 
+    "job search", 
+    "api", 
+    "scraping", 
+    "careers", 
+    "employment", 
+    "hiring",
+    "software developer jobs",
+    "job search api",
+    "linkedin scraper",
+    "job listings",
+    "remote jobs",
+    "india jobs",
+    "bengaluru jobs",
+    "mumbai jobs",
+    "delhi jobs"
+  ],
+  authors: [{ name: "OpenHire Team", url: "https://openhire.work" }],
   creator: "OpenHire",
   publisher: "OpenHire",
+  category: "Technology",
+  classification: "Job Search Platform",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
+  },
+  alternates: {
+    canonical: "https://openhire.work",
   },
   icons: {
     icon: [
@@ -62,34 +89,49 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://openhire.work",
-    title: "OpenHire - Find Your Dream Job",
+    title: "OpenHire - Find Your Dream Job | LinkedIn Job Search API",
     description: "Search thousands of job openings from LinkedIn with powerful scraping technology. Get instant results through our beautiful interface or REST API.",
     siteName: "OpenHire",
     images: [
       {
-        url: "/openhire.png",
+        url: "/openhire-preview.png",
         width: 1200,
         height: 630,
-        alt: "OpenHire - Job Search Platform",
+        alt: "OpenHire - Job Search Platform with LinkedIn Integration",
+        type: "image/png",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "OpenHire - Find Your Dream Job",
-    description: "Search thousands of job openings from LinkedIn with powerful scraping technology.",
-    images: ["/openhire.png"],
+    title: "OpenHire - Find Your Dream Job | LinkedIn Job Search API",
+    description: "Search thousands of job openings from LinkedIn with powerful scraping technology. Perfect for developers and job seekers.",
+    images: ["/openhire-preview.png"],
+    creator: "@openhire",
+    site: "@openhire",
   },
   robots: {
     index: true,
     follow: true,
+    nocache: false,
     googleBot: {
       index: true,
       follow: true,
+      noimageindex: false,
       "max-video-preview": -1,
       "max-image-preview": "large",
       "max-snippet": -1,
     },
+  },
+  verification: {
+    google: "5NsNTt2vFCzSeue7t306yHmQ5k04DaqRnPJeVekuNH4",
+  },
+  other: {
+    "theme-color": "#ffffff",
+    "color-scheme": "light",
+    "mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-status-bar-style": "default",
   },
 };
 
@@ -101,6 +143,77 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
+        <head>
+          {/* Structured Data for Organization */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "OpenHire",
+                "url": "https://openhire.work",
+                "logo": "https://openhire.work/openhire.png",
+                "description": "Job search platform with LinkedIn integration and powerful API",
+                "sameAs": [
+                  "https://twitter.com/openhire",
+                  "https://linkedin.com/company/openhire"
+                ],
+                "contactPoint": {
+                  "@type": "ContactPoint",
+                  "contactType": "customer service",
+                  "url": "https://openhire.work"
+                }
+              })
+            }}
+          />
+          {/* Structured Data for WebSite */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "name": "OpenHire",
+                "url": "https://openhire.work",
+                "description": "Find your dream job with our powerful LinkedIn job search platform",
+                "potentialAction": {
+                  "@type": "SearchAction",
+                  "target": "https://openhire.work/#search-section?keywords={search_term_string}",
+                  "query-input": "required name=search_term_string"
+                }
+              })
+            }}
+          />
+          {/* Structured Data for SoftwareApplication */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "SoftwareApplication",
+                "name": "OpenHire Job Search API",
+                "description": "Powerful REST API for LinkedIn job scraping and search functionality",
+                "url": "https://openhire.work/api-docs",
+                "applicationCategory": "BusinessApplication",
+                "operatingSystem": "Web",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "0",
+                  "priceCurrency": "USD",
+                  "description": "Free tier available"
+                },
+                "featureList": [
+                  "LinkedIn job scraping",
+                  "Real-time job search",
+                  "Location-based filtering",
+                  "REST API access",
+                  "Multiple programming language support"
+                ]
+              })
+            }}
+          />
+        </head>
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
         >
