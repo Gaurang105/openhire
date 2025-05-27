@@ -8,6 +8,7 @@ import {
   SignedOut,
   UserButton,
 } from "@clerk/nextjs";
+import { Analytics } from "@vercel/analytics/next";
 import { MobileNav } from "./mobile-nav";
 import "./globals.css";
 
@@ -152,6 +153,7 @@ export default function RootLayout({
             <div className="neo-zigzag"></div>
           </header>
           {children}
+          <Analytics />
         </body>
       </html>
     </ClerkProvider>
